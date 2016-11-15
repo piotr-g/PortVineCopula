@@ -2,13 +2,14 @@ language: python
 python:
   - "2.7"
 #  - "3.5"
+#  - "pypy"
 
 install:
   - pip install numpy
   - pip install cffi
   - pip install pytest
-  - sudo apt-get install -y r-base libgsl0-dev
-  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.rstudio.com/"), warning=function(x) { message(x); quit(status=1, save="no") })'
+  - sudo apt-get install -y r-base-dev libgsl0-dev
+  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.uni-muenster.de/"), warning=function(x) { message(x); quit(status=1, save="no") })'
 
 script: pytest
 
