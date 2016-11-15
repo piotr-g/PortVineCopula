@@ -7,9 +7,8 @@ install:
   - pip install numpy
   - pip install cffi
   - pip install pytest
-  - sudo apt-get install -y r-base
-  - sudo Rscript -e 'install.packages("doParallel", repos="http://cran.rstudio.com/")'
-  - sudo Rscript -e 'install.packages("VineCopula", repos="http://cran.rstudio.com/")'
+  - sudo apt-get install -y r-base libgsl-dev
+  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.rstudio.com/"), warning=function(x) { message(x); quit(status=1, save="no") })'
 
 script: pytest
 
