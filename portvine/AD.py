@@ -1,4 +1,5 @@
 from portvine import *
+import numpy
 
 ffi.cdef("void ADtest(double* cdf, int* n, double* out);")
 
