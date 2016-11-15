@@ -8,10 +8,10 @@ install:
   - pip install cffi
   - pip install pytest
   - sudo apt-get install -y r-base
+  - sudo Rscript -e 'install.packages("doParallel", repos="http://cran.rstudio.com/")'
   - sudo Rscript -e 'install.packages("VineCopula", repos="http://cran.rstudio.com/")'
 
-script:
-  - python -m pytest
+script: pytest
 
 notifications:
   slack: chatham:CcaaNGXV2IUiKvPqH1m6UHZa
