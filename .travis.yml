@@ -9,7 +9,8 @@ install:
   - pip install cffi
   - pip install pytest
   - sudo apt-get install -y r-base-dev libgsl0-dev
-  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.uni-muenster.de/"), warning=function(x) { message(x); quit(status=1, save="no") })'
+  #- sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.uni-muenster.de/"), warning=function(x) { message(x); quit(status=1, save="no") })'
+  - sudo Rscript -e 'install.packages("VineCopula", repos="http://cran.uni-muenster.de/")'
 
 script: pytest
 
