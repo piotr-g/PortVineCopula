@@ -9,10 +9,12 @@ python:
 
 install:
   - pip install cffi
-  - sudo apt-get install -y r-base-dev libgsl0-dev
-  #- sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.uni-muenster.de/"), warning=function(x) { message(x); quit(status=1, save="no") })'
-  #- sudo Rscript -e 'install.packages("doParallel", repos="http://cran.uni-muenster.de/")'
-  - sudo Rscript -e 'install.packages("VineCopula", repos="http://cran.uni-muenster.de/")'
+  - sudo apt-get install --no-install-recommends -y libgsl0-dev
+  # VineCopula requires copula R package which requires R>3.1 which requires Ubuntu > trusty
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ xenial main universe"
+  - sudo apt-get update
+  - sudo apt-get install --no-install-recommends -t xenial -y r-base-dev
+  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.uni-muenster.de/"), warning=function(x) { message(x); quit(status=1, save="no") })'
 
 script: pytest
 
