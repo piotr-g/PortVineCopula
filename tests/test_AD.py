@@ -1,11 +1,11 @@
-import portvine, numpy
+from portvine import *
 
 def test_AD_types():
     # Arrange
     cdf = numpy.array([.1, .2, .3, .4, .5])
 
     # Act
-    ad = portvine.AD(cdf)
+    ad = AD(cdf)
 
     # Assert
     assert isinstance(ad, float)
