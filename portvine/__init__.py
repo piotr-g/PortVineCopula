@@ -1,5 +1,11 @@
 import os, sys, cffi
 
+try:
+    import numpypy as numpy
+except ImportError:
+    pass
+import numpy
+
 ffi = cffi.FFI()
 
 # TODO!
