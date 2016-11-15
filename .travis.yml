@@ -17,7 +17,7 @@ install:
   - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.rstudio.com"), warning=function(x) { message(x); quit(status=1, save="no") })'
   - pip install cffi
 
-script: pytest
+script: python -m pytest
 
 notifications:
   slack: chatham:CcaaNGXV2IUiKvPqH1m6UHZa
