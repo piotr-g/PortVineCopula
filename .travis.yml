@@ -14,7 +14,7 @@ install:
 
   - sudo apt-get install --no-install-recommends -t trusty -y libgsl0-dev r-base-dev g++
   - sudo apt-get autoremove
-  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://R-Forge.R-project.org"), warning=function(x) { message(x); quit(status=1, save="no") })'
+  - sudo Rscript -e 'withCallingHandlers(install.packages("VineCopula", repos="http://cran.rstudio.com"), warning=function(x) { message(x); quit(status=1, save="no") })'
   - pip install cffi
 
 script: pytest
