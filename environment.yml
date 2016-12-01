@@ -1,6 +1,7 @@
 name: PortVineCopula
 dependencies:
   - python=2.7
+  - numpy
   - pip:
     - cffi
     - pytest
